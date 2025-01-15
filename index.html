@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p>lorem</p> -->
+    <ol id="ol_id">
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+        <li>lorem</li>
+    </ol>
+    <button onclick="change('red')">change red</button> <!-- атрибут onclick улавливает события, в данном случае мы передаем цвет -->
+    <button onclick="change('blue')">change blue</button> 
+
+    <script>
+        
+         let ol = document.getElementById('ol_id')
+         //метод createElement это функция объекта document
+        let li = document.createElement('li') //в кавычках название нужного нам узла(тега), так можно создавать любой узел
+        li.innerText = 'LOREM Element' //вложим в li что-то
+        /* ol.append(li) */ //помещаем текст в конец ol
+        ol.prepend(li)//помещаем текст в начало ol
+        console.log(li)
+//все свойства css есть в js, у кого?! У всех узлов джаваскрипта
+//в данном случае у узла ol есть все стили:
+        function change(color){
+            ol.style.backgroundColor = color
+        } //при срабатывании эта функция меняет цвет бэкграунда который мы передали в качестве аргумента в эту функцию
+       /*  ol.prepend('111') //метод append добавляет внутрь  в начало элемента(тега)
+        ol.append('Gucci') //этот метод добавляет данные внутрь в конец элемента(тега)
+        ol.before('before')  //метод before добавляет что-то снаружи элемента(тега) до
+        ol.after('after')  //метод after добавляет что-то снаружи элемента(тега) после */
+
+
+        /* document.innerHTML = '' */ //innerHTML это свойство объекта document
+        //Навигация: firstChild(первый дочерний элемент), lastChild(последний дочерний элемент), previousSibling(предыдущий элемент), nextSibling(следующий элемент), parentNode(узлы родителя), childNodes(дочерние узлы)
+    //все теги в HTML и JS называют узлами, в JS узел называют Node
+    //есть еще одна Навигация которая называется элемент: parentElement, children, firstElementChild, lastElementChild, previousElementSibling, nextElementSibling
+        let body = document.body.firstElementChild //если пишем firstElementChild или lastElementChild текстовые узлы уходят
+        /* let body = document.body.firstChild */
+        /* let body = document.body.firstChild.nextSibling.innerHTML = 'aswq' */ //c помощью innerHTML или innerText можно поменять содержимое тега
+        /* let title = document.head.lastChild.previousSibling
+        console.log(title) */
+        /* let title = document.body.parentNode */ //parentNode показывает родителя body, это будет html
+        let title = document.body.childNodes // childNodes это дочерние элементы (в каком-то массиве)
+        /* console.log(body)  */  /* JavaScript отступы тоже считает узлами. Отступы, перекидывания на след строку наз-ют текстовыми узлами */
+
+        /* console.log(document.html)
+        console.log(document.body) */
+
+        /* console.log(document.bgColor = 'red') */
+        /* console.log(document.body.innerHTML) */ //innerHTML-это свойство в js. Он выводит все что есть в body innerHTML-означает внутренние/вложенные в HTML (какие-либо) элементы
+        /* console.log(document.body.innerHTML = ' ') */ //такая запись все удалит в Elements и Console
+      /*   console.dir(document) //dir выводит все в ввиде объекта
+        console.log('document', document); //точка входа в html, document-это первый объект, самый большой объект
+        console.log('window', window); */ // window-это главный объект в не находится и document и другие объекты
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
