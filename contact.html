@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .big{
+            background-image: url('img/about-1.png');
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            display: flex;
+            background-repeat: no-repeat;
+        }
+        .active-block{
+            background-color: rgb(51, 51, 242);
+        }
+        .title{
+            background-color: rgba(255, 255, 255, 0.458);
+            text-align: center;
+            color: black;
+            align-self: flex-end;
+            width: 100%;
+        }
+        .titles{
+            display: flex;
+            justify-content: space-between;
+        }
+        .title__img img{
+            width: 320px;
+            padding-left: 10px;;
+        }
+        .title__img img{
+            width: 300px;
+            height: 300px;
+        }
+        .title__title{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="big" id="big">
+            <div class="title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur voluptates ad velit esse laborum eveniet, ducimus voluptatem et quidem aliquid quis qui sit? Corporis sed animi ut accusantium quisquam distinctio?</div>
+        </div>
+
+        <div class="titles">
+            <div id="item__1" class="title__item">
+                <div class="title__img">
+                    <img src="img/about-1.png" alt="">
+                </div>
+                <div class="title__title">Lorem ipsum dolor sit amet consectetur adipisicing </div>
+            </div>
+            <div id="item__2" class="title__item">
+                <div class="title__img">
+                    <img src="img/about-2.png" alt="">
+                </div>
+                <div class="title__title">Fuga sunt odio dflskdnflskdklfsjeiojiowjekfw</div>
+            </div>
+            <div id="item__3" class="title__item">
+                <div class="title__img">
+                    <img src="img/blog-1.png" alt="">
+                </div>
+                <div class="title__title">Reprehendit asdaswdadasdasderfwefwe</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+let big = document.getElementById("big")
+let item__1 = document.getElementById("item__1")        
+let item__2 = document.getElementById("item__2")
+let item__3 = document.getElementById("item__3")
+
+item__1.onclick = active;
+item__2.onclick = active;
+item__3.onclick = active;
+
+item__1.addEventListener("click", toggle);
+item__2.addEventListener("click", toggle);
+item__3.addEventListener("click", toggle);
+
+
+function active() {
+    item__1.classList.remove("active-block");
+    item__2.classList.remove("active-block");
+    item__3.classList.remove("active-block");
+    this.classList.add('active-block')
+}
+//let text = item__1.lastElementChild.innerText = '44'
+function toggle() {
+    let src = this.firstElementChild.firstElementChild.src;
+    let text = this.lastElementChild.innerText;
+
+    big.style.backgroundImage = `url(${src})`;
+    big.firstElementChild.innerText = text;
+}
+    </script>
+</body>
+</html>

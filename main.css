@@ -1,0 +1,23 @@
+
+.blocks{
+    width: 200px;
+    height: 200px;
+}
+.block-1{
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+}
+.block-2{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+}
+.active-block{
+    width: 200px;
+    height: 100px;
+    background-color: rgb(136, 0, 174);
+}
+.border{
+    border-radius: 50px;
+}

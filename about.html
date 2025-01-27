@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="blocks block-1" id="block-1"></div>
+    <div class="blocks block-2" id="block-2"></div>
+    <script>
+        
+    let block_1 = document.getElementById("block-1")
+    let block_2 = document.getElementById("block-2")
+    /* let block_2 = block_1.firstElementChild */
+    console.log(block_1)
+   
+//onclick это свойство в объекте
+    block_1.onclick = changeColor;
+    block_2.onclick = changeColor;
+//можно сделать еще так:
+   /*  block_1.addEventListener('click', changeColor)
+    block_2.addEventListener('click', changeColor) */
+
+    /* block_1.onclick = border;
+    block_2.onclick = border; */
+//метод addEventListener принимает сколько угодно аргументов, 1-ый это событие
+    block_1.addEventListener('click', border)
+    block_2.addEventListener('click', border)
+
+//неглавсное правило: одна функция выполняет одно действие
+function changeColor() {
+    this.classList.toggle('active-block')// this в основном бывает в объекте и обращается к родителю
+    /* block_2.classList.add('active-block') */
+}
+function border() {
+    this.classList.toggle('border')
+}
+console.log(block_1)
+    </script>
+</body>
+</html>

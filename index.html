@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+   
 </head>
+
 <body>
     <!-- <p>lorem</p> -->
-    <ol id="ol_id">
+    <ol id="ol_id" class="list">
         <li>lorem</li>
         <li>lorem</li>
         <li>lorem</li>
@@ -30,7 +33,13 @@
         function change(color){
             ol.style.backgroundColor = color
         } //при срабатывании эта функция меняет цвет бэкграунда который мы передали в качестве аргумента в эту функцию
-       /*  ol.prepend('111') //метод append добавляет внутрь  в начало элемента(тега)
+        // classList это объект
+       /*  ol.classList.add('list') */ //добавление класса list
+       /*  ol.classList.remove('list') */ //удаление класса list
+        ol.classList.contains('list') //проверяет есть ли класс и возвращает true/false
+/*        console.log(ol.classList.contains('list') */
+       ol.classList.toggle('list') //toggle удаляет существующий класс//добавляет несуществующий
+        /*  ol.prepend('111') //метод append добавляет внутрь  в начало элемента(тега)
         ol.append('Gucci') //этот метод добавляет данные внутрь в конец элемента(тега)
         ol.before('before')  //метод before добавляет что-то снаружи элемента(тега) до
         ol.after('after')  //метод after добавляет что-то снаружи элемента(тега) после */
